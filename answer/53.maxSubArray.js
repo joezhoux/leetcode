@@ -40,7 +40,6 @@ function max(arr, left, right) {
 }
 
 //动态规划
-
 var maxSubArray = function(nums) {
   const len = nums.length;
   let max = nums[0];
@@ -50,3 +49,4 @@ var maxSubArray = function(nums) {
   }
   return max;
 } 
+
