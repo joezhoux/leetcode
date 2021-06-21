@@ -7,7 +7,7 @@ columnNumber3 = 2147483647;
 
 //周期为26，2147483647%26 得出output的最后一个字母 即26个字母的第 23 个 w
 // (2147483647 - 23) / 26 去掉w 除26得新得周期，再  (2147483647 - 23) / 26 % 26 得output倒数第二个字母
-// 依次循环下去直到 columnNumber / 26 > 0;
+// 依次循环直到 columnNumber / 26 > 0; A~Z为 1~26，当位数为0时 重置为26
 var convertToTitle = function(columnNumber) {
   if(columnNumber < 27) return String.fromCharCode(columnNumber + 64);
   let str = "";
