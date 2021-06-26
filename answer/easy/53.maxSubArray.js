@@ -27,12 +27,12 @@ function max(arr, left, right) {
   const l = max(arr, left, mid);
   const r = max(arr, mid + 1, right);
   let sum = 0;
-  for(let i = mid; i > left; i--) {
+  for(let i = mid; i >= left; i--) {
     sum += arr[i];
     if(sum > lmax) lmax = sum;
   }
   sum = 0;
-  for(let i = mid + 1; i < right; i++) {
+  for(let i = mid + 1; i <= right; i++) {
     sum += arr[i];
     if(sum > rmax) rmax = sum;
   }

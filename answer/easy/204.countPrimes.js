@@ -1,5 +1,6 @@
 "use strict";
 
+//the sieve of Eratosthenes
 var countPrimes = function(n) {
   let arr = new Uint8Array(n);
   let count = 0;

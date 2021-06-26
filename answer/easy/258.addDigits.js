@@ -1,7 +1,7 @@
 "use strict";
 
 var addDigits = function(num) {
-  if (num < 11) return num;
+  if (num < 10) return num;
   num = num.toString();
   while (num.length > 1) {
     let sum = 0;
