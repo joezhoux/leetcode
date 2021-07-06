@@ -32,4 +32,3 @@ var deleteDuplicates = function(head) {
   return head;
 };
 
-console.log(deleteDuplicates([1,1,2,3,3]))
