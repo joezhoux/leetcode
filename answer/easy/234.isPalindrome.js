@@ -13,7 +13,7 @@ var isPalindrome = function(head) {
   prev = half;
   // half: 2 -> 1 -> null
   half = half.next;
-    // prev: 3 -> null
+  // prev: 3 -> null
   prev.next = null;
   while (half) {
     // temp: 1 -> null
