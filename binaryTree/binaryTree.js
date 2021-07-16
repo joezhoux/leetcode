@@ -200,4 +200,37 @@ var maxDepth = function(root) {
   return dep(root);
 };
 
+var sortedArrayToBST = function(nums, start=0, end = nums.length-1) {
+  if(start<=end){
+      let mid = Math.floor((start+end)/2);
+      // console.log(mid, end)
+      let root = new TreeNode(nums[mid]);
+      root.left = sortedArrayToBST(nums, start, mid-1);
+      root.right = sortedArrayToBST(nums, mid+1, end);
+      return root;
+  }
+  return null;
+};
+
+//广度优先 给定数组 一层一层创建二叉树
+var arrayToTree = function (arr) {
+  let root = new TreeNode(arr[0]);
+  let node = [root];
+  let i = 1;
+  loop:
+  for (let n of node) {
+    //标记排除n节点为0时不需要挂载子节点
+    if (n === 0) continue loop;
+    //判断数组的null值，使用0代替, n.left赋空值时报错
+    node.push(n.left = arr[i] === null ? 0 : new TreeNode(arr[i]));
+    i++;
+    if (i == arr.length) return root;
+    node.push(n.right = arr[i] === null ? 0 : new TreeNode(arr[i]));
+    i++;
+    if (i == arr.length) return root;
+  }
+};
+
+let r = arrayToTree([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1]);
+
 console.log(maxDepth(tree));

@@ -22,16 +22,18 @@ var postorderTraversal = function(root) {
     if (root.left && !root.mark) {
       root.mark = 'l';
       root = root.left;
-      stack.push(root.val);
+      stack.push(root);
       continue;
     }
     if (root.right && root.mark != 'r') {
       root.mark = 'r';
       root = root.right;
-      stack.push(root.val);
+      stack.push(root);
       continue;
     }
-    ans.push(stack.pop());
+    let p = stack.pop();
+    ans.push(p.val);
     root = stack[stack.length - 1];
   }
+  return ans;
 };
