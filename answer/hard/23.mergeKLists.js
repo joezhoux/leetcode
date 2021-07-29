@@ -24,7 +24,6 @@ function arrayToList(arr){
 let arr = [arrayToList([2,4,5]), arrayToList([1,3,4]), arrayToList([3,8,9]), arrayToList([2,6,7])]
 
 var mergeKLists = function(lists) {
-  debugger
   if (!lists.length) return null
   if (lists.length === 1) return lists[0]
   let list = new ListNode()
@@ -48,7 +47,7 @@ var mergeKLists = function(lists) {
 
 class MinHeap {
   constructor() {
-    this.heap = new Array(500)
+    this.heap = []
     this.index = 0
   }
   swap(i, j) {
